@@ -37,17 +37,18 @@ while True:
         if GPIO.input(23) == 1:
             counter = 0
             break
-	
-	while GPIO.input(24) == 0:
+
+    while GPIO.input(24) == 0:
         time.sleep(1)
         counter = counter + 1
 
         print(counter)
 
         if counter == 4:
-            "shutdown -P now"
+            os.system('shutdown -P now')
 
-        if GPIO.input(23) == 1:
+        if GPIO.input(24) == 1:
             counter = 0
-            break	
+            break
+
     time.sleep(1)
