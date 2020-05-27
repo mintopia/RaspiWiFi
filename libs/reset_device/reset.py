@@ -34,7 +34,7 @@ while True:
         if counter == 9:
             reset_lib.reset_to_host_mode()
 
-        if GPIO.input(23) == 0:
+        if GPIO.input(23) == 1:
             counter = 0
             break
 	
@@ -47,7 +47,7 @@ while True:
         if counter == 4:
             "shutdown -P now"
 
-        if GPIO.input(23) == 0:
+        if GPIO.input(23) == 1:
             counter = 0
             break	
     time.sleep(1)
